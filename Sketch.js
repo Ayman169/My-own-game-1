@@ -72,15 +72,19 @@ function draw(){
 
   fill("Gold");
   text("Gold : "+gold,200,30);
+  text("Spray : "+Sp1,200,60);
 
   fill("Silver");
   text("Silver : "+silver,350,30);
+  text("Spray : "+Sp2,350,60);
 
   fill("Brown");
   text("Bronze : "+bronze,500,30);
+  text("Spray : "+Sp3,500,60);
 
   fill("Turquoise");
   text("Diamond : "+gem,650,30);
+  text("Spray : "+Sp4,650,60);
 
   if(keyDown("space")){
     Tractor.velocityY = -20;
@@ -184,46 +188,42 @@ function Spray(){
   spray.addImage(sprayImg);
   spray.scale = 0.5;
   spray.lifetime = 20;
-  Sp1+1;
+   Sp1=Sp1+1;
   }
   if(silver>0 && keyDown("2")){
   spray = createSprite(150,obstacle.y,30,30);
   spray.addImage(sprayImg);
   spray.scale = 0.5;
   spray.lifetime = 20;
-  Sp2+1;
+   Sp2=Sp2+1;
   }
 if(bronze>0 && keyDown("3")){
   spray = createSprite(150,obstacle.y,30,30);
   spray.addImage(sprayImg);
   spray.scale = 0.5;
   spray.lifetime = 20;
-  Sp3+1;
+  Sp3=Sp3+1;
   }
   if(gem>0 && keyDown("4")){
   spray = createSprite(150,obstacle.y,30,30);
   spray.addImage(sprayImg);
   spray.scale = 0.5;
   spray.lifetime = 20;
-  Sp4+1;
+  Sp4 = Sp4+1;
   }
 }
 
 function scoreDec(){
-  if(Sp1=4){
-    gold-1;
-    Sp1 = 0;
+  if(Sp1/4===0){
+    gold = gold-1;
   }
-  if( Sp2=3){
-    silver-1;
-    Sp2 = 0;
+  if( Sp2/3===0){
+    silver = silver-1;
   }
-   if(Sp3=2){
-    bronze-1;
-    Sp3 = 0;
+   if(Sp3/2===0){
+    bronze = bronze-1;
   }
-  if(Sp4=6){
-    gem-1;
-    Sp4 = 0;
+  if(Sp4/6===0){
+    gem = gem-1;
   }
 }
